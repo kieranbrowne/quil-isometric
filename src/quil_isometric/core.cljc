@@ -1,6 +1,9 @@
 (ns quil-isometric.core
   (:require [quil.core :as q]))
 
+#?(:clj  (def PI  (float Math/PI))
+   :cljs (def PI  (.-PI js/Math)))
+
 (defn grid [u]
   (q/push-matrix)
   (dotimes [i 3]
@@ -15,12 +18,12 @@
   `(do
     (q/push-matrix)
     (q/translate (/ (q/width) 2) (/ (q/height) 2))
-    (q/rotate-x (- (/ (Math/PI) 6)))
+    (q/rotate-x (- (/ PI 6)))
     (q/rotate-y 
       (+ (q/radians 45)
          (q/sin (q/map-range 
                   (q/mouse-x) 
-                  0 (q/width) 0 (/ Math/PI 2)))))
+                  0 (q/width) 0 (/ PI 2)))))
     ~@body
     (q/pop-matrix)))
 
