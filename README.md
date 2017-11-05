@@ -1,5 +1,7 @@
 # Quil Isometric
 
+[![Clojars Project](https://img.shields.io/clojars/v/kieranbrowne/quil-isometric.svg)](https://clojars.org/kieranbrowne/quil-isometric)
+
 A clojure library for isometric imagery.
 
 ## Example
